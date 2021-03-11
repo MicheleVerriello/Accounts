@@ -1,0 +1,66 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title class="dark-background">Accounts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" mode="ios" class="dark-background-content">
+  <ion-searchbar animated mode="ios" [(ngModel)]="this.searchBarValue" (ionClear)="search()" (ionChange)="search()"></ion-searchbar>
+
+  <!-- Accounts list -->
+  <ion-list lines="full" mode="ios" class="dark-background">
+    <!-- Items that represents an account -->
+    <ion-item mode="ios" class="dark-background-content" *ngFor="let account of accounts" [routerLink]="['/tabs/tabs/account-details', account.id]">
+
+      <!-- if an account name corresponds to an icon, then it will be shown, otherwise a default icon will be shown -->
+      <ion-icon slot="start" name="key" color="warning" *ngIf="accountNameIsIconDefault(account.accountName)"></ion-icon>
+      <ion-icon slot="start" name="logo-alipay" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'alipa')"></ion-icon>
+      <ion-icon slot="start" name="logo-android" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'android')"></ion-icon>
+      <ion-icon slot="start" name="logo-amazon" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'amazon')"></ion-icon>
+      <ion-icon slot="start" name="logo-apple" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'apple')"></ion-icon>
+      <ion-icon slot="start" name="logo-instagram" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'instag')"></ion-icon>
+      <ion-icon slot="start" name="logo-apple-appstore" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'appstor')"></ion-icon>
+      <ion-icon slot="start" name="logo-bitbucket" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'bitbucket')"></ion-icon>
+      <ion-icon slot="start" name="logo-bitcoin" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'bitcoin')"></ion-icon>
+      <ion-icon slot="start" name="logo-chrome" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'chrome')"></ion-icon>
+      <ion-icon slot="start" name="cloud" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'cloud')"></ion-icon>
+      <ion-icon slot="start" name="logo-codepen" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'codepen')"></ion-icon>
+      <ion-icon slot="start" name="logo-discord" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'discord')"></ion-icon>
+      <ion-icon slot="start" name="logo-dropbox" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'dropbo')"></ion-icon>
+      <ion-icon slot="start" name="logo-facebook" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'faceboo')"></ion-icon>
+      <ion-icon slot="start" name="logo-github" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'github')"></ion-icon>
+      <ion-icon slot="start" name="logo-gitlab" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'gitlab')"></ion-icon>
+      <ion-icon slot="start" name="logo-google" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'google')"></ion-icon>
+      <ion-icon slot="start" name="logo-instagram" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'instagra')"></ion-icon>
+      <ion-icon slot="start" name="logo-ionic" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'ionic')"></ion-icon>
+      <ion-icon slot="start" name="logo-linkedin" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'linkedin')"></ion-icon>
+      <ion-icon slot="start" name="mail" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'mail')"></ion-icon>
+      <ion-icon slot="start" name="logo-microsoft" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'microsoft')"></ion-icon>
+      <ion-icon slot="start" name="mail" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'outlook')"></ion-icon>
+      <ion-icon slot="start" name="logo-paypal" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'paypal')"></ion-icon>
+      <ion-icon slot="start" name="logo-pinterest" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'pinterest')"></ion-icon>
+      <ion-icon slot="start" name="logo-playstation" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'playstat')"></ion-icon>
+      <ion-icon slot="start" name="logo-google-playstore" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'playstore')"></ion-icon>
+      <ion-icon slot="start" name="logo-reddit" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'reddit')"></ion-icon>
+      <ion-icon slot="start" name="logo-slack" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'slack')"></ion-icon>
+      <ion-icon slot="start" name="logo-skype" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'skype')"></ion-icon>
+      <ion-icon slot="start" name="logo-stackoverflow" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'stackoverflow')"></ion-icon>
+      <ion-icon slot="start" name="logo-steam" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'steam')"></ion-icon>
+      <ion-icon slot="start" name="logo-soundcloud" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'soundcloud')"></ion-icon>
+      <ion-icon slot="start" name="logo-snapchat" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'snapchat')"></ion-icon>
+      <ion-icon slot="start" name="logo-tiktok" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'tiktok')"></ion-icon>
+      <ion-icon slot="start" name="logo-tumblr" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'tumblr')"></ion-icon>
+      <ion-icon slot="start" name="logo-twitch" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'twitch')"></ion-icon>
+      <ion-icon slot="start" name="logo-twitter" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'twitter')"></ion-icon>
+      <ion-icon slot="start" name="logo-vimeo" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'vimeo')"></ion-icon>
+      <ion-icon slot="start" name="logo-vk" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'vk')"></ion-icon>
+      <ion-icon slot="start" name="logo-wechat" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'wechat')"></ion-icon>
+      <ion-icon slot="start" name="logo-whatsapp" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'whatsapp')"></ion-icon>
+      <ion-icon slot="start" name="logo-windows" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'windows')"></ion-icon>
+      <ion-icon slot="start" name="logo-xbox" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'xbox')"></ion-icon>
+      <ion-icon slot="start" name="logo-youtube" color="dark" *ngIf="accountNameIsIcon(account.accountName, 'youtube')"></ion-icon>
+      {{account.accountName}}
+
+    </ion-item>
+  </ion-list>
+</ion-content>

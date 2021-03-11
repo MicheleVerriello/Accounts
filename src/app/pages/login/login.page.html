@@ -1,0 +1,45 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="ios">
+    <ion-title class="dark-background" mode="ios">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios" class="dark-background-content">
+
+  <!-- If the itemsLenght == 1 it means that there is a user with a password and I will show the input and the button to check the password -->
+  <ion-list class="dark-background" mode="ios" *ngIf="this.itemsLength == 1"  lines="full">
+
+    <ion-card>
+      <ion-item mode="ios" class="dark-background-content">
+        <ion-input mode="ios" [(ngModel)]="passwordToLogin" placeholder="Insert password" type="password"></ion-input>
+      </ion-item>
+    </ion-card>  
+
+    <div class="save-button dark-background" *ngFor="let user of users">
+      <ion-button mode="ios" (click)="logIn(user.password)">Login</ion-button>
+      <!--<ion-button (click)="delete(user.id)">del</ion-button>-->
+    </div>
+
+  </ion-list>
+
+  <!-- If the itemsLenght == 0 it means that there isn't a user with a password and I will show the input and the button to create a new password -->
+  <ion-list class="dark-background" mode="ios" *ngIf="!this.itemsLength" lines="full">
+
+    <ion-card>
+      <ion-item mode="ios" class="dark-background-content">
+        <ion-input mode="ios" [(ngModel)]="newUser.password" placeholder="New password" type="password"></ion-input>
+      </ion-item>
+    </ion-card>
+    
+    <ion-card>
+        <ion-item mode="ios" class="dark-background-content">
+          <ion-input mode="ios" [(ngModel)]="passwordRepeated" placeholder="Repeat password" type="password"></ion-input>
+        </ion-item>
+      </ion-card>
+
+    <div class="save dark-background">
+      <ion-button mode="ios" (click)="save()">Sign In</ion-button>
+    </div>
+  
+  </ion-list>
+</ion-content>

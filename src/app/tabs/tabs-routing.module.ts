@@ -8,27 +8,34 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'accounts',
+        loadChildren: () => import('../pages/accounts/accounts.module').then(m => m.AccountsPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'new',
+        loadChildren: () => import('../pages/new/new.module').then(m => m.NewPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'settings',
+        loadChildren: () => import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
+        path: 'help',
+        loadChildren: () => import('../pages/help/help.module').then(m => m.HelpPageModule)
+      },
+      {
+        path: 'change-password',
+        loadChildren: () => import('../pages/change-password/change-password.module').then(m => m.ChangePasswordPageModule)
+      },
+      {
+        path: 'account-details/:id',
+        loadChildren: () => import('../pages/account-details/account-details.module').then(m => m.AccountDetailsPageModule)
+      },
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/accounts',
     pathMatch: 'full'
   }
 ];
