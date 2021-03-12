@@ -29,10 +29,20 @@
     background-color: black;
 }
 
-.dark-background-content {
+ion-content {
     --background: black;
 }
 
-.dark-color {
-    --color: black;
+ion-title {
+    background-color: black;
+    color: white;
 }
+
+ion-item {
+    --background: black;
+    color: white;
+}
+
+/* ion-icon {
+    color: white;
+} */

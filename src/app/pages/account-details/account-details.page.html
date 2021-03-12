@@ -1,64 +1,64 @@
-<ion-header class="dark-background-content" mode="ios">
-  <ion-toolbar class="dark-background-content">
+<ion-header mode="ios">
+  <ion-toolbar>
     <ion-title>{{this.account.accountName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content mode="ios" class="dark-background-content">
+<ion-content mode="ios" [fullscreen]="true">
 
-  <ion-list mode="ios" class="dark-background" lines="full" *ngIf="!isEdit">
-    <ion-item mode="ios" class="dark-background-content">
+  <ion-list lines="full" *ngIf="!isEdit" class="dark-background">
+    <ion-item>
       <ion-label>Email: </ion-label>
       <ion-text slot="end">{{this.account.email}}</ion-text>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Password: </ion-label>
       <ion-text slot="end">{{this.account.password}}</ion-text>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Username: </ion-label>
       <ion-text slot="end">{{this.account.username}}</ion-text>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Pin: </ion-label>
       <ion-text slot="end">{{this.account.pin}}</ion-text>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Description: </ion-label>
       <ion-text slot="end">{{this.account.description}}</ion-text>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content" >
+    <ion-item>
       <ion-label>Phone: </ion-label>
       <ion-text slot="end">{{this.account.telefono}}</ion-text>
     </ion-item>
   </ion-list>
 
-  <ion-list mode="ios" class="dark-background" lines="full" *ngIf="isEdit">
-    <ion-item mode="ios" class="dark-background-content">
+  <ion-list lines="full" *ngIf="isEdit" class="dark-background">
+    <ion-item>
       <ion-label>Name: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.accountName" placeholder="Account Name" clear-input="true"></ion-input>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Email: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.email" placeholder="Email" clear-input="true"></ion-input>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Password: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.password" placeholder="Password" clear-input="true"></ion-input>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Username: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.username" placeholder="Username" clear-input="true"></ion-input>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Pin: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.pin" placeholder="Pin" clear-input="true"></ion-input>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Description: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.description" placeholder="Description" clear-input="true"></ion-input>
     </ion-item>
-    <ion-item mode="ios" class="dark-background-content">
+    <ion-item>
       <ion-label>Phone: </ion-label>
       <ion-input slot="end" [(ngModel)]="this.accountToModify.telefono" placeholder="Phone" clear-input="true"></ion-input>
     </ion-item>
