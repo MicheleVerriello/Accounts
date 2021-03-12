@@ -1,2 +1,2 @@
 # Accounts
-Ionic version 6 used in this project.
+Ionic version 6.13.1 used in this project.
