@@ -5,12 +5,12 @@
 </ion-header>
 
 <ion-content mode="ios" [fullscreen]="true">
-  <ion-searchbar animated mode="ios" [(ngModel)]="this.searchBarValue" (ionClear)="search()" (ionChange)="search()"></ion-searchbar>
+  <ion-searchbar animated [(ngModel)]="this.searchBarValue" (ionClear)="search()" (ionChange)="search()"></ion-searchbar>
 
   <!-- Accounts list -->
-  <ion-list lines="full" mode="ios" class="dark-background">
+  <ion-list lines="full" class="dark-background">
     <!-- Items that represents an account -->
-    <ion-item mode="ios" *ngFor="let account of accounts" [routerLink]="['/tabs/tabs/account-details', account.id]">
+    <ion-item *ngFor="let account of accounts" [routerLink]="['/tabs/tabs/account-details', account.id]">
 
       <!-- if an account name corresponds to an icon, then it will be shown, otherwise a default icon will be shown -->
       <ion-icon slot="start" name="key" color="warning" *ngIf="accountNameIsIconDefault(account.accountName)"></ion-icon>
